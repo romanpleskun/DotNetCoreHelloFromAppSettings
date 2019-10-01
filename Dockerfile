@@ -26,5 +26,6 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
 
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet --version
-RUN ls -l
+RUN pwd
+COPY app/DotNetCoreHelloFromAppSettings.dll /app/
 RUN dotnet DotNetCoreHelloFromAppSettings.dll
