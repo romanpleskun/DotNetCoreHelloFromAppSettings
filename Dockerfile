@@ -18,7 +18,7 @@ RUN cd tmp && wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotn
     && mkdir -p /usr/share/dotnet \
     && tar -C /usr/share/dotnet -xzf dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
-    && rm tmp/dotnet.tar.gz
+    && rm dotnet.tar.gz
      
 # Enable correct mode for dotnet watch (only mode supported in a container)
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true \ 
