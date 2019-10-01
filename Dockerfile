@@ -12,7 +12,6 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
 #ENV DOTNET_SDK_VERSION=2.2.402
 WORKDIR = /app
 RUN mkdir tmp/
-ADD /home/RoMkO/Downloads/dotnet-sdk-2.2.402-linux-musl-x64.tar.gz tmp/
 RUN cd tmp && wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-musl-x64.tar.gz \
     && dotnet_sha512='e23a41f60afa72005e3f5b251f855a080786535b7647eca3d55a8553ce7b3e4ae499150ed936971972a9fe185fbfa674ed4a8a4041fda5dfc73ddb3405afadcd' \
     && echo "$dotnet_sha512  dotnet.tar.gz" | sha512sum -c - \
