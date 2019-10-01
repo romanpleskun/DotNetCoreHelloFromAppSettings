@@ -25,4 +25,4 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
     NUGET_XMLDOC_MODE=skip
 
 # Trigger first run experience by running arbitrary cmd to populate local package cache
-RUN dotnet help
+RUN dotnet --version
