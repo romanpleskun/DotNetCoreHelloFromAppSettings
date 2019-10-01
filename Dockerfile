@@ -12,10 +12,10 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
 #ENV DOTNET_SDK_VERSION=2.2.402
 WORKDIR = /app
 RUN mkdir tmp/
-COPY /home/RoMkO/Downloads/dotnet-sdk-2.2.402-linux-musl-x64.tar.gz tmp/dotnet.tar.gz
+ADD /home/RoMkO/Downloads/dotnet-sdk-2.2.402-linux-musl-x64.tar.gz tmp/
 RUN cd tmp \
      && mkdir -p /usr/share/dotnet \
-     && tar -C /usr/share/dotnet -xzf dotnet.tar.gz \
+     && tar -C /usr/share/dotnet -xzf dotnet-sdk-2.2.402-linux-musl-x64.tar.gz \
      && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
      && rm dotnet.tar.gz 
      
