@@ -10,8 +10,10 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
 
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION=2.2.402
-WORKDIR = /tmp/wgetdotnet/
-RUN wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-musl-x64.tar.gz \
+WORKDIR = /app
+RUN mkdir tmp/
+
+RUN cd tmp && wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-musl-x64.tar.gz \
     && dotnet_sha512='e23a41f60afa72005e3f5b251f855a080786535b7647eca3d55a8553ce7b3e4ae499150ed936971972a9fe185fbfa674ed4a8a4041fda5dfc73ddb3405afadcd' \
     && echo "$dotnet_sha512  dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
@@ -26,3 +28,5 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
 
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet --version
+COPY 
+app/DotNetCoreHelloFromAppSettings.dll
