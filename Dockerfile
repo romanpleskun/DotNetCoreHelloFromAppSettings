@@ -28,3 +28,4 @@ ENV HelloValue="Hi there"
 COPY ./ ./
 RUN dotnet build src/DotNetCoreHelloFromAppSettings.sln -o /app
 RUN dotnet /app/DotNetCoreHelloFromAppSettings.dll
+ENTRYPOINT exec dotnet /app/DotNetCoreHelloFromAppSettings.dll
