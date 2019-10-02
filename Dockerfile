@@ -25,5 +25,5 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
     NUGET_XMLDOC_MODE=skip
 RUN dotnet --help
 COPY ./ ./
-RUN dotnet build /app/src/DotNetCoreHelloFromAppSettings.sln -o /app
+RUN dotnet build src/DotNetCoreHelloFromAppSettings.sln -o /app
 RUN dotnet DotNetCoreHelloFromAppSettings.dll
