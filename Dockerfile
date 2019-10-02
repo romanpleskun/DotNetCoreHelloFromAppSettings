@@ -27,5 +27,3 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet --version
 RUN pwd
-#COPY /home/RoMkO/Downloads/TeamCity/buildAgent/work/1022b5db3d4c342c/app/DotNetCoreHelloFromAppSettings.dll /app/
-#RUN dotnet DotNetCoreHelloFromAppSettings.dll
