@@ -25,7 +25,7 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
     NUGET_XMLDOC_MODE=skip
 RUN dotnet --help
 ENV HelloValue="Hi there"
-COPY src/DotNetCoreHelloFromAppSettings/bin/Debug/netcoreapp2.0/ ./
+COPY src/DotNetCoreHelloFromAppSettings/bin/Debug/netcoreapp2.0/ /app
 #RUN dotnet build src/DotNetCoreHelloFromAppSettings.sln -o /app
-RUN dotnet /app/DotNetCoreHelloFromAppSettings.dll
+#RUN dotnet /app/DotNetCoreHelloFromAppSettings.dll
 ENTRYPOINT exec dotnet /app/DotNetCoreHelloFromAppSettings.dll
