@@ -26,4 +26,4 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
 RUN dotnet --help
 COPY ./ ./
 RUN dotnet build src/DotNetCoreHelloFromAppSettings.sln -o /app
-RUN dotnet DotNetCoreHelloFromAppSettings.dll
+RUN dotnet /app/DotNetCoreHelloFromAppSettings.dll
