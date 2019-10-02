@@ -23,6 +23,7 @@ RUN wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DO
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true \ 
     # Skip extraction of XML docs - generally not useful within an image/container - helps performance
     NUGET_XMLDOC_MODE=skip
+COPY ./ ./
 
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet --version
