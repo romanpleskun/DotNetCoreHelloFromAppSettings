@@ -24,6 +24,7 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
     # Skip extraction of XML docs - generally not useful within an image/container - helps performance
     NUGET_XMLDOC_MODE=skip
 RUN dotnet --help
+ENV HelloValue="Hi there"
 COPY ./ ./
 RUN dotnet build src/DotNetCoreHelloFromAppSettings.sln -o /app
 RUN dotnet /app/DotNetCoreHelloFromAppSettings.dll
